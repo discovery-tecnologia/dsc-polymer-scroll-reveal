@@ -55,3 +55,7 @@ The content can be any HTML element or other polymer component.
 | --scroll-reveal                 | Host element style                | {}      |
 | --scroll-reveal-wrapper         | Wrapper when hide style           | {}      |
 | --scroll-reveal-wrapper-visible | Wrapper when show style           | {}      |
+
+## TODO
+
+ * tests
