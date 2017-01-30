@@ -1,4 +1,4 @@
-# dsc-polymer-parallax
+# dsc-polymer-scroll-reveal
 
 [![Build Status](https://travis-ci.org/discovery-tecnologia/dsc-polymer-scroll-reveal.svg?branch=master)](http://travis-ci.org/#!/discovery-tecnologia/dsc-polymer-scroll-reveal)
 
