@@ -1,0 +1,111 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="dsc-polymer-scroll-reveal">
+
+  <template>
+
+    <style>
+      :host {
+
+      }
+
+      #wrapper {
+        opacity: 0;
+        visibility: visible;
+        -webkit-transform: translateX(-150px) scale(1.5) rotateZ(-10deg);
+        transform: translateX(-150px) scale(1.5) rotateZ(-10deg);
+        -webkit-transition: -webkit-transform 0.5s ease-in-out 0s, opacity 0.5s ease-in-out 0s;
+        transition: transform 0.5s ease-in-out 0s, opacity 0.5s ease-in-out 0s;
+
+        display: block;
+        background-color: #ccc;
+        width: 500px;
+        height: 100px;
+      }
+
+      #wrapper.show {
+        opacity: 1;
+        visibility: visible;
+        -webkit-transform: translateX(0) scale(1) rotateZ(0);
+        transform: translateX(0) scale(1) rotateZ(0);
+        -webkit-transition: -webkit-transform 0.5s ease-in-out 0.25s, opacity 0.5s ease-in-out 0.25s;
+        transition: transform 0.5s ease-in-out 0.25s, opacity 0.5s ease-in-out 0.25s;
+      }
+    </style>
+
+    <div id="wrapper">
+      <content id="content"></content>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      is: 'dsc-polymer-scroll-reveal',
+
+      properties: {
+
+        /**
+         * Element deslocation origin
+         * Values: 'bottom', 'left', 'top', 'right'
+         */
+        origin: {
+          type: String,
+          value: 'bottom',
+        },
+
+        /**
+         * Can be any valid CSS distance, e.g. '5rem', '10%', '20vw', etc.
+         */
+        distance: {
+          type: String,
+          value: '100px',
+        },
+
+        /**
+         * Repeat effect when the element appears again.
+         */
+        repeat: {
+          type: Boolean,
+          value: false,
+        },
+
+      },
+
+      /**
+       * On component ready.
+       */
+      ready: function() {
+        this._processStyles();
+        this.listen(window, 'scroll', '_onScrollPage');
+        console.log(this.origin);
+        console.log(this.distance);
+        console.log(this.repeat);
+      },
+
+      _processStyles: function() {
+        newValue = oldValue + 'XXXXX';
+        return newValue;
+      },
+
+      /**
+       * Beharior for scroll page event.
+       */
+      _onScrollPage: function() {
+        var isVisible = this._isVisibleInViewPort();
+        this.toggleClass("show", isVisible, this.$.wrapper);
+      },
+
+      /**
+       * Check if the element is inside the view port.
+       */
+      _isVisibleInViewPort: function() {
+        var elemTop = this.getBoundingClientRect().top;
+        var elemBottom = this.getBoundingClientRect().bottom;
+        var visible =  (elemTop >= 0) && (elemBottom <= window.innerHeight);
+
+        return visible;
+      },
+    });
+  </script>
+
+</dom-module>

@@ -1,0 +1,41 @@
+{
+  "name": "dsc-polymer-scroll-reveal",
+  "description": "Provides animation effect when scrolling page. Elements are displayed when they enter the view port.",
+  "version": "0.0.1",
+  "authors": [
+    "Discovery Tecnologia"
+  ],
+  "keywords": [
+    "web-components",
+    "web-component",
+    "polymer",
+    "Discovery",
+    "scroll-reveal",
+    "scroll",
+    "reveal",
+    "dsc"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ],
+  "main": "dsc-polymer-scroll-reveal.html",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/discovery-tecnologia/dsc-polymer-scroll-reveal"
+  },
+  "private": true,
+  "dependencies": {
+    "polymer": "polymer/polymer#^1.4.0",
+    "iron-test-helpers": "^1.4.0"
+  },
+  "devDependencies": {
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
+    "web-component-tester": "^4.0.0",
+    "test-fixture": "PolymerElements/test-fixture#^1.0.0",
+    "iron-test-helpers": "polymerelements/iron-test-helpers#^1.4.0"
+  }
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>dsc-polymer-scroll-reveal tests</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../../web-component-tester/browser.js"></script>
+  <script src="../../iron-test-helpers/mock-interactions.js"></script>
+
+  <link rel="import" href="../dsc-polymer-scroll-reveal.html">
+
+</head>
+<style>
+  dsc-polymer-scroll-reveal {
+
+  }
+</style>
+<body>
+
+  <test-fixture id="basic">
+    <template>
+      <dsc-polymer-scroll-reveal>
+        <h1>Section title</h1>
+      </dsc-polymer-scroll-reveal>
+    </template>
+  </test-fixture>
+
+  <script>
+    suite('<dsc-polymer-scroll-reveal>', function() {
+      var container;
+
+      setup(function() {
+        container = fixture('basic');
+      });
+
+      test('Check content integrity', function() {
+        expect(Polymer.dom(container).queryDistributedElements('h1').length).to.be.equal(1);
+      });
+    });
+  </script>
+</body>
+</html>
