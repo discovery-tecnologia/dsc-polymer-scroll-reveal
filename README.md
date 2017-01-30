@@ -26,23 +26,32 @@ $ bower i https://github.com/discovery-tecnologia/dsc-polymer-scroll-reveal.git 
 Example usage:
 
 ```html
-<dsc-polymer-scroll-reveal>
+<dsc-polymer-scroll-reveal repeat distance="500px" scale="1" origin="right" delay-show="0" delay-hide="0.5" time-show="1.5" time-hide="0.5">
   <h1>Section title</h1>
-  <p>Nam mattis porta mattis. Donec et neque scelerisque, pretium arcu sed, vehicula diam. Nam a arcu eu sapien porta<br>posuere id id arcu. Fusce rhoncus erat ut nisl pharetra.</p>
-  <a href="#">View more</a>
+  <p>Nam mattis porta mattis. Donec et neque scelerisque.</p>
 </dsc-polymer-scroll-reveal>
 ```
 
 ## API
 
-| Property       | Description                    | Default       |
-|:---------------|--------------------------------|---------------|
-| origin         | Element deslocation origin. Values: 'bottom', 'left', 'top', 'right' | 'bottom' |
-| distance       | Can be any valid CSS distance, e.g. '5rem', '10%', '20vw', etc       | '100px'  |
-| repeat         | Repeat effect when the element appears again | false    |
+| Property        | Description                    | Default       |
+|:----------------|--------------------------------|---------------|
+| origin          | Element deslocation origin. Values: 'bottom', 'left', 'top', 'right' | 'bottom' |
+| distance        | Distance that the element must travel to the final position. Can be any valid CSS distance, e.g. '5rem', '10%', '20vw', etc. | '200px' |
+| animation       | Specify the Speed Curve of the Animation. Values: 'ease', 'linear', 'ease-in', 'ease-out', 'ease-in-out'  | 'ease' |
+| delayShow       | Delay time in secounds to start animation of reveal | 0 |
+| delayHide       | Delay time in secounds to start animation of hiding | 0 |
+| timeShow        | Duration time in seconds of the reveal animation    | 1 |
+| timeHide        | Duration time in seconds of the hiding animation    | 1 |
+| repeat          | Repeat effect when the element appears again        | false |
+| scale           | Initial scale of element to animation. (0, 0.5, 1, 1.5 ...) | 1 |
+| rotate-graus    | Rotation degrees, between 0 and 100.                | 0 |
+| rotateDirection | Rotate direction. Represents sense of the clock, 'backward' or 'forward' | 'forward' |
 
 The content can be any HTML element or other polymer component.
 
-| Custom property |	Description                       | Default |
-|:----------------|-----------------------------------|---------|
-|                 |                                   | {}      |
+| Custom property                 |	Description                       | Default |
+|:--------------------------------|-----------------------------------|---------|
+| --scroll-reveal                 | Host element style                | {}      |
+| --scroll-reveal-wrapper         | Wrapper when hide style           | {}      |
+| --scroll-reveal-wrapper-visible | Wrapper when show style           | {}      |
