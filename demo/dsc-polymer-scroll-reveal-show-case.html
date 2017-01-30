@@ -1,0 +1,277 @@
+<link rel="import" href="../../polymer/polymer.html">
+<link rel="import" href="../dsc-polymer-scroll-reveal.html">
+
+<dom-module id="dsc-polymer-scroll-reveal-show-case">
+
+  <template>
+    <style>
+    :host {
+      overflow: hidden;
+      display: block;
+      background-color: #333;
+      --scroll-reveal: {
+        display: inline-block;
+        width: 33%;
+      }
+    }
+
+    h1 {
+      color: #fff;
+      text-align: center;
+    }
+
+    p {
+      line-height: 25px;
+    }
+
+    div.my-content {
+      display: block;
+      background-color: #eee;
+      width: 500px;
+      border: 3px solid #555;
+      padding: 10px;
+      margin: 30px auto;
+    }
+
+    section p {
+      color: #fff;
+      text-align: center;
+    }
+    </style>
+
+    <div id="content">
+      <h1>Basic (no repeat)</h1>
+      <dsc-polymer-scroll-reveal distance="500px" scale="1" origin="left" delay-show="0" delay-hide="0.5" time-show="1.5" time-hide="0.5">
+        <div class="my-content">
+          <p>
+            distance="500px"<br>
+            scale="1"<br>
+            origin="left"<br>
+            delay-show="0"<br>
+            delay-hide="0.5"<br>
+            time-show="1.5"<br>
+            time-hide="0.5"
+          </p>
+        </div>
+      </dsc-polymer-scroll-reveal>
+
+      <dsc-polymer-scroll-reveal distance="500px" scale="1" origin="top" delay-show="0" delay-hide="0.5" time-show="1.5" time-hide="0.5">
+        <div class="my-content">
+          <p>
+            distance="500px"<br>
+            scale="1"<br>
+            origin="top"<br>
+            delay-show="0"<br>
+            delay-hide="0.5"<br>
+            time-show="1.5"<br>
+            time-hide="0.5"
+          </p>
+        </div>
+      </dsc-polymer-scroll-reveal>
+
+      <dsc-polymer-scroll-reveal distance="500px" scale="1" origin="right" delay-show="0" delay-hide="0.5" time-show="1.5" time-hide="0.5">
+        <div class="my-content">
+          <p>
+            distance="500px"<br>
+            scale="1"<br>
+            origin="right"<br>
+            delay-show="0"<br>
+            delay-hide="0.5"<br>
+            time-show="1.5"<br>
+            time-hide="0.5"
+          </p>
+        </div>
+      </dsc-polymer-scroll-reveal>
+
+      <h1>Delay</h1>
+
+      <dsc-polymer-scroll-reveal repeat distance="500px" scale="1" origin="right" delay-show="1" delay-hide="0.5" time-show="1.5" time-hide="0.5">
+        <div class="my-content">
+          <p>
+            repeat<br>
+            distance="500px"<br>
+            scale="1"<br>
+            origin="right"<br>
+            delay-show="1"<br>
+            delay-hide="0.5"<br>
+            time-show="1.5"<br>
+            time-hide="0.5"
+          </p>
+        </div>
+      </dsc-polymer-scroll-reveal>
+
+      <dsc-polymer-scroll-reveal repeat distance="500px" scale="1" origin="bottom" delay-show="1" delay-hide="0.5" time-show="1.5" time-hide="0.5">
+        <div class="my-content">
+          <p>
+            repeat<br>
+            distance="500px"<br>
+            scale="1"<br>
+            origin="bottom"<br>
+            delay-show="1"<br>
+            delay-hide="0.5"<br>
+            time-show="1.5"<br>
+            time-hide="0.5"
+          </p>
+        </div>
+      </dsc-polymer-scroll-reveal>
+
+      <dsc-polymer-scroll-reveal repeat distance="500px" scale="1" origin="left" delay-show="1" delay-hide="0.5" time-show="1.5" time-hide="0.5">
+        <div class="my-content">
+          <p>
+            repeat<br>
+            distance="500px"<br>
+            scale="1"<br>
+            origin="left"<br>
+            delay-show="1"<br>
+            delay-hide="0.5"<br>
+            time-show="1.5"<br>
+            time-hide="0.5"
+          </p>
+        </div>
+      </dsc-polymer-scroll-reveal>
+
+      <h1>Animations</h1>
+
+      <dsc-polymer-scroll-reveal repeat distance="500px" scale="1" origin="bottom" delay-show="0" delay-hide="0.5" time-show="1.5" time-hide="0.5" animation="ease">
+        <div class="my-content">
+          <p>
+            repeat<br>
+            distance="500px"<br>
+            scale="1"<br>
+            origin="bottom"<br>
+            delay-show="2"<br>
+            delay-hide="0.5"<br>
+            time-show="0"<br>
+            time-hide="0.5"<br>
+            animation="ease"
+          </p>
+        </div>
+      </dsc-polymer-scroll-reveal>
+
+      <dsc-polymer-scroll-reveal repeat distance="500px" scale="1" origin="bottom" delay-show="0" delay-hide="0.5" time-show="1.5" time-hide="0.5" animation="linear">
+        <div class="my-content">
+          <p>
+            repeat<br>
+            distance="500px"<br>
+            scale="1"<br>
+            origin="bottom"<br>
+            delay-show="2"<br>
+            delay-hide="0.5"<br>
+            time-show="0"<br>
+            time-hide="0.5"<br>
+            animation="linear"
+          </p>
+        </div>
+      </dsc-polymer-scroll-reveal>
+
+      <dsc-polymer-scroll-reveal repeat distance="500px" scale="1" origin="bottom" delay-show="0" delay-hide="0.5" time-show="1.5" time-hide="0.5" animation="ease-in">
+        <div class="my-content">
+          <p>
+            repeat<br>
+            distance="500px"<br>
+            scale="1"<br>
+            origin="bottom"<br>
+            delay-show="2"<br>
+            delay-hide="0.5"<br>
+            time-show="0"<br>
+            time-hide="0.5"<br>
+            animation="ease-in"
+          </p>
+        </div>
+      </dsc-polymer-scroll-reveal>
+
+      <dsc-polymer-scroll-reveal repeat distance="500px" scale="1" origin="bottom" delay-show="0" delay-hide="0.5" time-show="1.5" time-hide="0.5" animation="ease-out">
+        <div class="my-content">
+          <p>
+            repeat<br>
+            distance="500px"<br>
+            scale="1"<br>
+            origin="bottom"<br>
+            delay-show="2"<br>
+            delay-hide="0.5"<br>
+            time-show="0"<br>
+            time-hide="0.5"<br>
+            animation="ease-out"
+          </p>
+        </div>
+      </dsc-polymer-scroll-reveal>
+
+      <dsc-polymer-scroll-reveal repeat distance="500px" scale="1" origin="bottom" delay-show="0" delay-hide="0.5" time-show="1.5" time-hide="0.5" animation="ease-in-out">
+        <div class="my-content">
+          <p>
+            repeat<br>
+            distance="500px"<br>
+            scale="1"<br>
+            origin="bottom"<br>
+            delay-show="2"<br>
+            delay-hide="0.5"<br>
+            time-show="0"<br>
+            time-hide="0.5"<br>
+            animation="ease-in-out"
+          </p>
+        </div>
+      </dsc-polymer-scroll-reveal>
+
+      <dsc-polymer-scroll-reveal repeat distance="1000px" scale="1" origin="bottom" delay-show="0" delay-hide="0.5" time-show="5" time-hide="5" animation="ease">
+        <div class="my-content">
+          <p>
+            repeat<br>
+            distance="1000px"<br>
+            scale="1"<br>
+            origin="bottom"<br>
+            delay-show="0"<br>
+            delay-hide="0.5"<br>
+            time-show="5"<br>
+            time-hide="5"<br>
+            animation="ease"
+          </p>
+        </div>
+      </dsc-polymer-scroll-reveal>
+
+      <section>
+      <p>
+      Mauris nulla risus, tincidunt vel nibh nec, euismod consectetur augue. Sed ac aliquet lectus. <br>Quisque sed tortor sodales, lacinia felis vitae, viverra purus. Pellentesque iaculis tortor fringilla tellus sodales, vitae dictum ex tempus. Sed massa sem, condimentum in posuere nec, condimentum at erat. In finibus, orci et tristique imperdiet, orci tortor ullamcorper dui, ut faucibus ex orci pretium tortor. Sed convallis malesuada elementum. Sed sit amet ante at nunc tempus fermentum eu in risus. Vivamus mauris tellus, placerat id placerat quis, vehicula nec ipsum.
+      </p>
+      <p>
+      Etiam faucibus urna ac augue condimentum commodo. Aliquam sit amet viverra ligula. In fermentum lobortis libero, id porta mi hendrerit ut.<br> Nam fringilla molestie finibus. Donec aliquet semper purus porta posuere. Aliquam fermentum elementum felis, a fringilla metus blandit sit amet. Duis et nibh sit amet dui rhoncus interdum.
+      </p>
+      <p>
+      Sed convallis urna a commodo imperdiet. Fusce arcu est, vulputate sed augue nec, tristique euismod nibh. Suspendisse in egestas turpis. Nunc id ultrices sapien. Aliquam vel turpis a erat placerat ultrices. Quisque lacus nisl, volutpat at lobortis vitae, varius ut arcu. Suspendisse finibus eros mollis convallis venenatis. Etiam eget nulla eu velit rutrum ornare. Cras sed leo non nisl vestibulum consectetur molestie finibus felis. Proin sed mollis nunc. Nullam condimentum pellentesque magna. Nullam sit amet ligula nulla.
+      </p>
+      <p>
+      Pellentesque dignissim eleifend est, sed eleifend sem bibendum vel.<br> Nunc cursus sollicitudin mollis. Suspendisse ex est, varius eget luctus nec, congue eget risus. Sed euismod ultrices viverra. Nunc ornare mi eget augue ornare, et finibus leo fringilla. Sed sit amet urna eget dui molestie facilisis. Maecenas euismod auctor nisi. Proin vitae varius magna. Mauris consectetur, quam quis iaculis hendrerit, sem nisl euismod lorem, quis semper quam justo vitae nibh. Duis dignissim fermentum lectus ut ullamcorper. Donec ante nulla, molestie sollicitudin dolor at, fermentum pulvinar ligula. Phasellus ultricies consectetur imperdiet. <br>Nunc nec enim porttitor ligula egestas euismod sed nec purus. Pellentesque fringilla commodo lobortis. Curabitur pulvinar, elit sed venenatis sollicitudin, velit ante fringilla nulla, vel tristique nunc eros vel ligula.
+      </p>
+      <p>
+      Pellentesque quis quam ullamcorper, convallis lacus quis, blandit justo.<br> Praesent gravida placerat condimentum. Suspendisse in leo quis mi dictum feugiat sed vel neque. Maecenas malesuada neque in enim posuere faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce in augue porttitor, bibendum justo vitae, ultricies urna. Quisque dolor neque, mattis accumsan augue pharetra, pretium hendrerit magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam non viverra turpis, sed pulvinar velit.
+      </p>
+      <p>
+      Mauris nulla risus, tincidunt vel nibh nec, euismod consectetur augue. Sed ac aliquet lectus. <br>Quisque sed tortor sodales, lacinia felis vitae, viverra purus. Pellentesque iaculis tortor fringilla tellus sodales, vitae dictum ex tempus. Sed massa sem, condimentum in posuere nec, condimentum at erat. In finibus, orci et tristique imperdiet, orci tortor ullamcorper dui, ut faucibus ex orci pretium tortor. Sed convallis malesuada elementum. Sed sit amet ante at nunc tempus fermentum eu in risus. Vivamus mauris tellus, placerat id placerat quis, vehicula nec ipsum.
+      </p>
+      <p>
+      Etiam faucibus urna ac augue condimentum commodo. Aliquam sit amet viverra ligula. <br>In fermentum lobortis libero, id porta mi hendrerit ut. Nam fringilla molestie finibus. Donec aliquet semper purus porta posuere. Aliquam fermentum elementum felis, a fringilla metus blandit sit amet. Duis et nibh sit amet dui rhoncus interdum.
+      </p>
+      <p>
+      Sed convallis urna a commodo imperdiet. Fusce arcu est, vulputate sed augue nec, tristique euismod nibh. Suspendisse in egestas turpis. Nunc id ultrices sapien. Aliquam vel turpis a erat placerat ultrices. Quisque lacus nisl, volutpat at lobortis vitae, varius ut arcu. Suspendisse finibus eros mollis convallis venenatis. Etiam eget nulla eu velit rutrum ornare. Cras sed leo non nisl vestibulum consectetur molestie finibus felis. Proin sed mollis nunc. Nullam condimentum pellentesque magna. Nullam sit amet ligula nulla.
+      </p>
+      <p>
+      Pellentesque dignissim eleifend est, sed eleifend sem bibendum vel. Nunc cursus sollicitudin mollis. <br>Suspendisse ex est, varius eget luctus nec, congue eget risus. Sed euismod ultrices viverra. Nunc ornare mi eget augue ornare, et finibus leo fringilla. Sed sit amet urna eget dui molestie facilisis. Maecenas euismod auctor nisi. Proin vitae varius magna. Mauris consectetur, quam quis iaculis hendrerit, sem nisl euismod lorem, quis semper quam justo vitae nibh. Duis dignissim fermentum lectus ut ullamcorper. Donec ante nulla, molestie sollicitudin dolor at, fermentum pulvinar ligula. Phasellus ultricies consectetur imperdiet. Nunc nec enim porttitor ligula egestas euismod sed nec purus. Pellentesque fringilla commodo lobortis. Curabitur pulvinar, elit sed venenatis sollicitudin, velit ante fringilla nulla, vel tristique nunc eros vel ligula.
+      </p>
+      <p>
+      Pellentesque quis quam ullamcorper, convallis lacus quis, blandit justo. Praesent gravida placerat condimentum. Suspendisse in leo quis mi dictum feugiat sed vel neque. Maecenas malesuada neque in enim posuere faucibus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce in augue porttitor, bibendum justo vitae, ultricies urna. Quisque dolor neque, mattis accumsan augue pharetra, pretium hendrerit magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam non viverra turpis, sed pulvinar velit.
+      </p>
+    </section>
+
+
+    </div>
+
+
+
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'dsc-polymer-scroll-reveal-show-case',
+    });
+  </script>
+</dom-module>
