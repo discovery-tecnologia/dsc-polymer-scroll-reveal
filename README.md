@@ -7,11 +7,12 @@ Provides animation effect when scrolling page. Elements are displayed when they 
 ## Demo
 
 ```
-git clone https://github.com/discovery-tecnologia/dsc-polymer-scroll-reveal.git
-cd dsc-polymer-scroll-reveal
-bower install
-node install -g polymer-cli
-polymer serve
+$ git clone https://github.com/discovery-tecnologia/dsc-polymer-scroll-reveal.git
+$ cd dsc-polymer-scroll-reveal
+$ npm install
+$ bower install
+$ node install -g polymer-cli
+$ polymer serve
 ```
 Open browser: http://localhost:8080/components/dsc-polymer-scroll-reveal/demo/
 
