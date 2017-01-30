@@ -200,7 +200,7 @@
           return;
         }
         // show or hide
-        this.toggleClass("show", isVisible, this.$.wrapper);
+        this.toggleClass('show', isVisible, this.$.wrapper);
         // set flag
         if (isVisible) {
           this.alreadyRevealed = true;
@@ -209,11 +209,13 @@
 
       /**
        * Check if the element is inside the view port.
+       *
+       * @return {Boolean}
        */
       _isVisibleInViewPort: function() {
         var elemTop = this.getBoundingClientRect().top;
         var elemBottom = this.getBoundingClientRect().bottom;
-        var visible =  (elemTop >= 0) && (elemBottom <= window.innerHeight);
+        var visible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
 
         return visible;
       },
