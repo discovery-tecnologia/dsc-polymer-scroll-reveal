@@ -1,5 +1,5 @@
 {
-  "name": "dsc-polymer-parallax",
+  "name": "dsc-polymer-scroll-reveal",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^3.12.0",
