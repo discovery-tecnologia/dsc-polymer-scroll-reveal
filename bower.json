@@ -3,7 +3,10 @@
   "description": "Provides animation effect when scrolling page. Elements are displayed when they enter the view port.",
   "version": "0.0.1",
   "authors": [
-    "Discovery Tecnologia"
+    {
+      "name": "Andre Luiz Haag",
+      "email": "andreluizhaag@gmail.com"
+    }
   ],
   "keywords": [
     "web-components",
