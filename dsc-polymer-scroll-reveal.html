@@ -6,30 +6,32 @@
 
     <style>
       :host {
-
+        @apply(--scroll-reveal);
       }
 
       #wrapper {
         opacity: 0;
         visibility: visible;
-        -webkit-transform: translateX(-150px) scale(1.5) rotateZ(-10deg);
-        transform: translateX(-150px) scale(1.5) rotateZ(-10deg);
-        -webkit-transition: -webkit-transform 0.5s ease-in-out 0s, opacity 0.5s ease-in-out 0s;
-        transition: transform 0.5s ease-in-out 0s, opacity 0.5s ease-in-out 0s;
-
-        display: block;
-        background-color: #ccc;
-        width: 500px;
-        height: 100px;
+        /* Example: translateX(-500px) scale(1.5) rotateZ(-10deg); */
+        -webkit-transform: translatevar(--axis)(var(--signal)var(--distance)) scale(var(--scale)) rotateZ(var(--rotate-signal)var(--rotate-graus)deg);
+        transform: translatevar(--axis)(var(--signal)var(--distance)) scale(var(--scale)) rotateZ(var(--rotate-signal)var(--rotate-graus)deg);
+        -webkit-transition: -webkit-transform var(--time-hide)s ease-in-out var(--time-hide)s, opacity var(--time-hide)s ease-in-out var(--time-hide)s;
+        transition: transform var(--time-hide)s var(--animation) var(--time-hide)s, opacity var(--time-hide)s var(--animation) var(--time-hide)s;
+        -webkit-transition-delay: var(--delay-hide)s;
+        transition-delay: var(--delay-hide)s;
+        @apply(--scroll-reveal-wrapper);
       }
 
       #wrapper.show {
         opacity: 1;
         visibility: visible;
-        -webkit-transform: translateX(0) scale(1) rotateZ(0);
-        transform: translateX(0) scale(1) rotateZ(0);
-        -webkit-transition: -webkit-transform 0.5s ease-in-out 0.25s, opacity 0.5s ease-in-out 0.25s;
-        transition: transform 0.5s ease-in-out 0.25s, opacity 0.5s ease-in-out 0.25s;
+        -webkit-transform: translateY(0) scale(1) rotateZ(0);
+        transform: translateY(0) scale(1) rotateZ(0);
+        -webkit-transition: -webkit-transform 0.5s var(--animation) 0.25s, opacity 0.5s var(--animation) 0.25s;
+        transition: transform var(--time-show)s var(--animation) var(--time-show)s, opacity var(--time-show)s var(--animation) var(--time-show)s;
+        -webkit-transition-delay: var(--delay-show)s;
+        transition-delay: var(--delay-show)s;
+        @apply(--scroll-reveal-wrapper-visible);
       }
     </style>
 
@@ -54,11 +56,67 @@
         },
 
         /**
+         * Distance that the element must travel to the final position.
          * Can be any valid CSS distance, e.g. '5rem', '10%', '20vw', etc.
          */
         distance: {
           type: String,
           value: '100px',
+        },
+
+        /**
+         * Specify the Speed Curve of the Animation.
+         *  'ease'        specifies an animation with a slow start, then fast, then end slowly (this is default)
+         *  'linear'      specifies an animation with the same speed from start to end
+         *  'ease-in'     specifies an animation with a slow start
+         *  'ease-out'    specifies an animation with a slow end
+         *  'ease-in-out' specifies an animation with a slow start and end
+         *
+         * More in: http://www.w3schools.com/css/tryit.asp?filename=trycss3_animation_speed
+         */
+        animation: {
+          type: String,
+          value: 'ease',
+        },
+
+        /**
+         * Delay time in secounds to start animation of reveal.
+         */
+        delayShow: {
+          type: String,
+          value: '0',
+        },
+
+        /**
+         * Delay time in secounds to start animation of hiding.
+         */
+        delayHide: {
+          type: String,
+          value: '0',
+        },
+
+        /**
+         * Duration time in seconds of the reveal animation.
+         */
+        timeShow: {
+          type: String,
+          value: '1',
+        },
+
+        /**
+         * Duration time in seconds of the hiding animation.
+         */
+        timeHide: {
+          type: String,
+          value: '1',
+        },
+
+        /**
+         * Time in secounds to animation effect.
+         */
+        animationTime: {
+          type: String,
+          value: '1',
         },
 
         /**
@@ -69,6 +127,37 @@
           value: false,
         },
 
+        /**
+         * Initial scale of element to animation. (0, 0.5, 1, 1.5 ...)
+         */
+        scale: {
+          type: String,
+          value: '1',
+        },
+
+        /**
+         * Rotation degrees, between 0 and 100.
+         */
+        rotateGraus: {
+          type: String,
+          value: '0',
+        },
+
+        /**
+         * Rotate direction. Represents sense of the clock, 'backward' or 'forward'
+         */
+        rotateDirection: {
+          type: String,
+          value: 'forward',
+        },
+
+        /**
+         * Indicates that the element has already been revealed at least once.
+         */
+        alreadyRevealed: {
+          type: Boolean,
+          value: false,
+        },
       },
 
       /**
@@ -77,14 +166,35 @@
       ready: function() {
         this._processStyles();
         this.listen(window, 'scroll', '_onScrollPage');
-        console.log(this.origin);
-        console.log(this.distance);
-        console.log(this.repeat);
       },
 
+      /**
+       * When dom already loaded.
+       */
+      attached: function() {
+        // init
+        this._onScrollPage();
+      },
+
+      /**
+       * Process styles according to properties
+       */
       _processStyles: function() {
-        newValue = oldValue + 'XXXXX';
-        return newValue;
+        var deslocationAxis = (this.origin === 'left' || this.origin === 'right') ? 'X' : 'Y';
+        var deslocationSignal = (this.origin === 'top' || this.origin === 'left') ? '-' : '';
+        var rotateSignal = (this.rotateDirection === 'forward') ? '-' : '';
+        this.customStyle['--axis'] = deslocationAxis;
+        this.customStyle['--signal'] = deslocationSignal;
+        this.customStyle['--distance'] = this.distance;
+        this.customStyle['--scale'] = this.scale;
+        this.customStyle['--rotate-signal'] = rotateSignal;
+        this.customStyle['--rotate-graus'] = this.rotateGraus;
+        this.customStyle['--delay-show'] = this.delayShow;
+        this.customStyle['--delay-hide'] = this.delayHide;
+        this.customStyle['--animation'] = this.animation;
+        this.customStyle['--time-show'] = this.timeShow;
+        this.customStyle['--time-hide'] = this.timeHide;
+        Polymer.updateStyles();
       },
 
       /**
@@ -92,7 +202,16 @@
        */
       _onScrollPage: function() {
         var isVisible = this._isVisibleInViewPort();
+        // if repeat false, performs animation once
+        if (this.alreadyRevealed && this.repeat === false) {
+          return;
+        }
+        // show or hide
         this.toggleClass("show", isVisible, this.$.wrapper);
+        // set flag
+        if (isVisible) {
+          this.alreadyRevealed = true;
+        }
       },
 
       /**
