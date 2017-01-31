@@ -1,12 +1,8 @@
 {
   "name": "dsc-polymer-scroll-reveal",
   "description": "Provides animation effect when scrolling page. Elements are displayed when they enter the view port.",
-  "version": "0.0.1",
   "authors": [
-    {
-      "name": "Andre Luiz Haag",
-      "email": "andreluizhaag@gmail.com"
-    }
+    "Andre Luiz Haag <andreluizhaag@gmail.com>"
   ],
   "keywords": [
     "web-components",
@@ -16,6 +12,7 @@
     "scroll-reveal",
     "scroll",
     "reveal",
+    "effect",
     "dsc"
   ],
   "license": "MIT",
@@ -30,7 +27,7 @@
     "type": "git",
     "url": "git://github.com/discovery-tecnologia/dsc-polymer-scroll-reveal"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "polymer": "polymer/polymer#^1.4.0",
     "iron-test-helpers": "^1.4.0"
