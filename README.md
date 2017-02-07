@@ -20,7 +20,7 @@ Open browser: http://localhost:8080/components/dsc-polymer-scroll-reveal/demo/
 Install with:
 
 ```
-$ bower i https://github.com/discovery-tecnologia/dsc-polymer-scroll-reveal.git --save
+$ bower i dsc-polymer-scroll-reveal --save
 ```
 
 Example usage:
