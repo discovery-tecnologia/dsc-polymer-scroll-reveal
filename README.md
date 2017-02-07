@@ -1,4 +1,4 @@
-# dsc-polymer-scroll-reveal
+# &#60;dsc-polymer-scroll-reveal&#62;
 
 [![Build Status](https://travis-ci.org/discovery-tecnologia/dsc-polymer-scroll-reveal.svg?branch=master)](http://travis-ci.org/#!/discovery-tecnologia/dsc-polymer-scroll-reveal)
 
@@ -10,7 +10,6 @@ Provides animation effect when scrolling page. Elements are displayed when they 
 $ git clone https://github.com/discovery-tecnologia/dsc-polymer-scroll-reveal.git
 $ cd dsc-polymer-scroll-reveal
 $ npm install
-$ bower install
 $ node install -g polymer-cli
 $ polymer serve
 ```
@@ -56,6 +55,14 @@ The content can be any HTML element or other polymer component.
 | --scroll-reveal                 | Host element style                | {}      |
 | --scroll-reveal-wrapper         | Wrapper when hide style           | {}      |
 | --scroll-reveal-wrapper-visible | Wrapper when show style           | {}      |
+
+## Test
+
+Check sintax and execute selenium tests.
+
+```
+$ npm test
+```
 
 ## TODO
 
