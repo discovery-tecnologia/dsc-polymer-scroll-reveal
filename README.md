@@ -1,6 +1,7 @@
 # &#60;dsc-polymer-scroll-reveal&#62;
 
 [![Build Status](https://travis-ci.org/discovery-tecnologia/dsc-polymer-scroll-reveal.svg?branch=master)](http://travis-ci.org/#!/discovery-tecnologia/dsc-polymer-scroll-reveal)
+[![npm](https://img.shields.io/npm/l/express.svg)]()
 
 Provides animation effect when scrolling page. Elements are displayed when they enter the view port.
 
